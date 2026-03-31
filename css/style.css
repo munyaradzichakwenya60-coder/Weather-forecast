@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: darkcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.dashboard-container {
+    width: 95vw;
+    height: 90vh;
+    background-color: 	#87CEEB;
+    border: 1px solid #333333;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    width: 70px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-icons .icon {
+    font-size: 1.5rem;
+    padding: 12px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-icons .icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.icon.active {
+    opacity: 1;
+    color: #5efce8;
+    background-color: rgba(94, 252, 232, 0.15);
+    box-shadow: 0 0 15px rgba(94, 252, 232, 0.1);
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+}
+
+.search-bar {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #2e3148;
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: #fff;
+    outline: none;
+}
+
+button {
+    background-color: #5efce8;
+    color: #0b0b14;
+    border: none;
+    border-radius: 12px;
+    padding: 0 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+}
+
+.current-card,
+.highlights-card,
+.forecast-card {
+    background-color:	lightblue;
+    border: 1px solid #2e3148;
+    border-radius: 25px;
+    padding: 40px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns for better fit */
+    gap: 15px;
+}
+
+
+.current-card {
+    text-align: center;
+}
+
+#weather-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#temp {
+    font-size: 100px;
+    font-weight: 600;
+    color: #5efce8;
+}
+
+.unit {
+    font-size: 60px;
+    color: #5efce8;
+}
+
+#location {
+    font-size: 1.2rem;
+    color: black;
+    margin-top: 10px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: 	#87CEEB;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.stat-box label {
+    display: block;
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.forecast-card {
+    grid-column: span 2;
+    padding: 30px;
+}
+
+.forecast-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.forecast-item {
+    background-color: #1a1c2e;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.forecast-item .day {
+    color: #a0a0c0;
+    margin-bottom: 10px;
+}
+
+.forecast-item .icon {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.forecast-item .temp {
+    font-weight: bold;
+    color: #5efce8;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background-color: #23263a;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 25px;
+    width: 350px;
+    border: 1px solid #2e3148;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #a0a0c0;
+}
+
+.close-btn:hover { color: #5efce8; }
+
+.setting-item {
+    margin-top: 25px;
+}
+
+.setting-item label {
+    display: block;
+    color: #a0a0c0;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    background: #1a1c2e;
+    color: white;
+    border: 1px solid #2e3148;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+}

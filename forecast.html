@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/../css/style.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="nav-icons">
+                <div class="icon">☁️</div>
+                <div class="icon active">📊</div>
+                <div class="icon">🗺️</div>
+                <div class="icon">⚙️</div>
+            </div>
+        </aside>
+
+
+        <main class="main-content">
+            <div class="search-bar">
+                <input type="text" id="city-input" placeholder="Search city...">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div class="weather-grid">
+                <div class="current-card">
+                    <div id="weather-icon">☀️</div>
+                    <div class="temp-container">
+                        <span id="temp">--</span><span class="unit">°C</span>
+                    </div>
+                    <p id="location">Location</p>
+                </div>
+
+                <div class="highlights-card">
+                    <h3>Today's Highlights</h3>
+                    <div class="highlights-grid">
+                        <div class="stat-box"><label>Humidity</label>
+                            <p id="humidity">--%</p>
+                        </div>
+                        <div class="stat-box"><label>Wind</label>
+                            <p id="wind">-- km/h</p>
+                        </div>
+                        <div class="stat-box"><label>Visibility</label>
+                            <p id="visibility">-- km</p>
+                        </div>
+                        <div class="stat-box"><label>Feels Like</label>
+                            <p id="feels-like">--°</p>
+                        </div>
+                        <!-- New Stats -->
+                        <div class="stat-box"><label>UV Index</label>
+                            <p id="uv-index">--</p>
+                        </div>
+                        <div class="stat-box"><label>Pressure</label>
+                            <p id="pressure">-- hPa</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="forecast-card">
+                    <h3>5-Day Forecast</h3>
+                    <div id="forecast-container" class="forecast-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Settings</h2>
+            <hr style="border: 0; border-top: 1px solid #2e3148; margin: 15px 0;">
+
+            <div class="setting-item">
+                <label>Temperature Unit</label>
+                <select id="unit-select">
+                    <option value="metric">Celsius (°C)</option>
+                    <option value="imperial">Fahrenheit (°F)</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <label>Theme Color</label>
+                <div style="display: flex; gap: 10px; margin-top: 5px;">
+                    <div
+                        style="width: 20px; height: 20px; background: #5efce8; border-radius: 50%; border: 2px solid white;">
+                    </div>
+                    <div style="width: 20px; height: 20px; background: #ff7eb3; border-radius: 50%; opacity: 0.5;">
+                    </div>
+                    <div style="width: 20px; height: 20px; background: #adff2f; border-radius: 50%; opacity: 0.5;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/forecast.js"></script>
+</body>
+
+</html>
